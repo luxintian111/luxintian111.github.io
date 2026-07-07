@@ -3,56 +3,17 @@ import { useEffect, useRef } from 'react'
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4'
 
-const FADE_DURATION = 0.5
-
 export default function VideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const hasLooped = useRef(false)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
-    let rafId = 0
-
-    const updateOpacity = () => {
-      const { currentTime, duration } = video
-      if (!duration || Number.isNaN(duration)) {
-        rafId = requestAnimationFrame(updateOpacity)
-        return
-      }
-
-      if (!hasLooped.current) {
-        video.style.opacity = '1'
-      } else if (currentTime < FADE_DURATION) {
-        video.style.opacity = String(currentTime / FADE_DURATION)
-      } else if (currentTime > duration - FADE_DURATION) {
-        video.style.opacity = String((duration - currentTime) / FADE_DURATION)
-      } else {
-        video.style.opacity = '1'
-      }
-
-      rafId = requestAnimationFrame(updateOpacity)
-    }
-
-    const handleEnded = () => {
-      hasLooped.current = true
-      video.style.opacity = '0'
-      window.setTimeout(() => {
-        video.currentTime = 0
-        void video.play()
-      }, 100)
-    }
-
     video.style.opacity = '1'
     void video.play()
-    rafId = requestAnimationFrame(updateOpacity)
-    video.addEventListener('ended', handleEnded)
 
-    return () => {
-      cancelAnimationFrame(rafId)
-      video.removeEventListener('ended', handleEnded)
-    }
+    return () => {}
   }, [])
 
   return (
@@ -68,6 +29,7 @@ export default function VideoBackground() {
         muted
         playsInline
         preload="auto"
+        loop
       />
 
       {/* 顶部：只淡入标题区，不遮中间和底部风景 */}
