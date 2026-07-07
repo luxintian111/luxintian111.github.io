@@ -18,14 +18,14 @@ export default function App() {
         </div>
       </div>
 
-      {/* 向下滚动才看到的内容 */}
+      {/* 内容区：从白色自然过渡到淡绿渐变 */}
       <div className="relative z-10 bg-gradient-to-b from-white via-[#f4f8f5] to-[#e6eee8]">
         <AboutSection />
         <TraitsSection />
         <DailySection />
         <ContactSection />
 
-        <footer className="border-t border-[#000000]/5 bg-[#e6eee8]/50 py-8 text-center text-sm text-[#6F6F6F]">
+        <footer className="border-t border-[#000000]/5 bg-[#dce8dc]/50 py-8 text-center text-sm text-[#6F6F6F]">
           <p>&copy; 2026 卢欣恬 | Powered by GitHub Pages</p>
         </footer>
       </div>

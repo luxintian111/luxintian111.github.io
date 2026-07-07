@@ -68,7 +68,8 @@ export default function VideoBackground() {
         playsInline
         preload="auto"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      {/* 经典 Aethera 渐变：上白 → 中透 → 下白，自然融进内容区 */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background from-0% via-transparent via-40% to-background to-100%" />
     </div>
   )
 }

@@ -7,10 +7,10 @@ const navItems = [
 
 export default function Navigation() {
   return (
-    <nav className="relative z-10 mx-auto w-full max-w-7xl px-8 py-6">
-      <ul className="grid w-full grid-cols-5 items-center justify-items-center gap-2">
+    <nav className="relative z-10 mx-auto flex max-w-7xl justify-center px-8 py-6">
+      <ul className="flex items-center gap-5 sm:gap-7">
         {navItems.map((item) => (
-          <li key={item.href} className="flex justify-center">
+          <li key={item.href}>
             <a
               href={item.href}
               className={`whitespace-nowrap text-sm transition-colors duration-300 hover:text-[#000000] ${
@@ -22,7 +22,7 @@ export default function Navigation() {
           </li>
         ))}
 
-        <li className="flex justify-center">
+        <li className="ml-1 sm:ml-2">
           <a
             href="#contact"
             className="whitespace-nowrap rounded-full bg-[#000000] px-5 py-2.5 text-sm text-white transition-transform duration-300 hover:scale-[1.03]"
