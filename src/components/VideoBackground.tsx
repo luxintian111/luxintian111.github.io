@@ -58,12 +58,12 @@ export default function VideoBackground() {
   return (
     <div
       className="pointer-events-none absolute inset-x-0 bottom-0 z-0 overflow-hidden"
-      style={{ top: '260px' }}
+      style={{ top: '200px' }}
     >
       <video
         ref={videoRef}
         className="hero-video h-full w-full object-cover"
-        style={{ objectPosition: 'center 62%' }}
+        style={{ objectPosition: 'center 55%' }}
         src={VIDEO_URL}
         muted
         playsInline
@@ -75,7 +75,7 @@ export default function VideoBackground() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.88) 6%, rgba(255,255,255,0.65) 14%, rgba(255,255,255,0.4) 22%, rgba(255,255,255,0.18) 32%, rgba(255,255,255,0.06) 45%, transparent 60%)',
+            'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.75) 8%, rgba(255,255,255,0.35) 20%, rgba(255,255,255,0.1) 35%, transparent 55%)',
         }}
       />
 
