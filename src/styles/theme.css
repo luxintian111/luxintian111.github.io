@@ -42,6 +42,9 @@ body {
   color: #000000;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-stroke: 0.2px rgba(0,0,0,0.03);
 }
 
 .font-serif {
@@ -56,6 +59,8 @@ body {
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  filter: contrast(1.04) saturate(1.06);
+  filter: contrast(1.1) saturate(1.15) brightness(1.02);
   will-change: transform;
+  image-rendering: high-quality;
+  image-rendering: crisp-edges;
 }
