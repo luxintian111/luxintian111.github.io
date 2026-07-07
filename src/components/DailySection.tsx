@@ -12,7 +12,7 @@ export default function DailySection() {
           要么是找个安静的地方坐下来把大脑放空——这太幸福了，就这么平淡。
         </p>
 
-        <div className="rounded-2xl border border-white/80 bg-white/40 px-6 py-5">
+        <div className="rounded-2xl border border-white/60 bg-[#e8f5e9]/25 px-6 py-5 backdrop-blur-md shadow-sm shadow-black/5">
           <div className="mb-3 flex items-center justify-between">
             <span className="text-sm text-[#6F6F6F]">幸福指数</span>
             <span className="font-serif text-2xl text-[#000000]">95%</span>
