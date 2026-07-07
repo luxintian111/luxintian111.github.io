@@ -18,14 +18,14 @@ export default function App() {
         </div>
       </div>
 
-      {/* 内容区：从白色自然过渡到淡绿渐变 */}
-      <div className="relative z-10 bg-gradient-to-b from-white via-[#f8faf9] via-[#f4f8f5] via-[#ebf5ee] via-[#d8f0df] to-[#c8e6c9]">
+      {/* 内容区：从视频衔接处开始浅绿渐变 */}
+      <div className="relative z-10 bg-gradient-to-b from-[#f2f9f2] via-[#eef7ef] via-[#e8f3e9] via-[#e0efe2] to-[#d4ead6]">
         <AboutSection />
         <TraitsSection />
         <DailySection />
         <ContactSection />
 
-        <footer className="border-t border-[#000000]/5 bg-[#c8e6c9] py-8 text-center text-sm text-[#4a7c59]">
+        <footer className="border-t border-[#000000]/5 bg-[#d4ead6] py-8 text-center text-sm text-[#4a7c59]">
           <p>&copy; 2026 卢欣恬 | Powered by GitHub Pages</p>
         </footer>
       </div>

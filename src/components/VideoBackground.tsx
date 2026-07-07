@@ -41,12 +41,12 @@ export default function VideoBackground() {
         }}
       />
 
-      {/* 底部：仅在最后轻淡入，保留花草清晰度 */}
+      {/* 底部：渐入浅绿色，与内容区无缝衔接 */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to bottom, transparent 0%, transparent 65%, rgba(255,255,255,0.08) 78%, rgba(255,255,255,0.25) 88%, rgba(255,255,255,0.55) 95%, #ffffff 100%)',
+            'linear-gradient(to bottom, transparent 0%, transparent 65%, rgba(242,249,242,0.1) 78%, rgba(242,249,242,0.3) 88%, rgba(242,249,242,0.6) 95%, #f2f9f2 100%)',
         }}
       />
     </div>
