@@ -5,7 +5,7 @@ export default function HeroSection() {
       className="flex flex-1 flex-col items-center justify-center px-6 pb-28 pt-4 text-center"
     >
       <h1 className="animate-fade-rise max-w-7xl font-serif text-4xl font-normal leading-[0.95] tracking-[-1.5px] text-[#000000] sm:text-5xl md:text-6xl">
-        欢迎来到我的个人主页
+        欢迎参观我的世界
       </h1>
 
       <div className="animate-fade-rise-delay mt-8 max-w-2xl space-y-3 text-base leading-relaxed text-[#6F6F6F] sm:text-lg">
