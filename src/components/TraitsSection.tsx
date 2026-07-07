@@ -1,3 +1,5 @@
+import SectionPanel from './SectionPanel'
+
 const traits = [
   '阅读一些文字，思考人生的奥秘',
   '漫无目的的胡乱散步',
@@ -7,28 +9,20 @@ const traits = [
 
 export default function TraitsSection() {
   return (
-    <section className="relative z-10 mx-auto max-w-7xl px-8 py-24">
-      <div className="grid gap-12 md:grid-cols-2">
-        <div>
-          <p className="mb-4 text-sm uppercase tracking-widest text-[#6F6F6F]">
-            日常
-          </p>
-          <h2 className="font-serif text-4xl font-normal tracking-tight text-[#000000] md:text-5xl">
-            我一般干些什么
-          </h2>
-        </div>
-
-        <ul className="flex flex-col gap-4">
-          {traits.map((trait) => (
-            <li
-              key={trait}
-              className="border-b border-[#000000]/10 pb-4 text-base text-[#6F6F6F] transition-colors duration-300 hover:text-[#000000]"
-            >
-              {trait}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <SectionPanel label="日常" title="我一般干些什么" variant="mist">
+      <ul className="grid gap-4 sm:grid-cols-2">
+        {traits.map((trait, index) => (
+          <li
+            key={trait}
+            className="group rounded-2xl border border-white/80 bg-white/40 px-5 py-5 text-[#6F6F6F] transition-all duration-300 hover:border-[#000000]/10 hover:bg-white/70 hover:text-[#000000]"
+          >
+            <span className="mb-2 block font-serif text-2xl text-[#000000]/20 transition-colors group-hover:text-[#000000]/40">
+              0{index + 1}
+            </span>
+            {trait}
+          </li>
+        ))}
+      </ul>
+    </SectionPanel>
   )
 }

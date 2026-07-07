@@ -7,6 +7,7 @@ const FADE_DURATION = 0.5
 
 export default function VideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const hasLooped = useRef(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -21,7 +22,9 @@ export default function VideoBackground() {
         return
       }
 
-      if (currentTime < FADE_DURATION) {
+      if (!hasLooped.current) {
+        video.style.opacity = '1'
+      } else if (currentTime < FADE_DURATION) {
         video.style.opacity = String(currentTime / FADE_DURATION)
       } else if (currentTime > duration - FADE_DURATION) {
         video.style.opacity = String((duration - currentTime) / FADE_DURATION)
@@ -33,6 +36,7 @@ export default function VideoBackground() {
     }
 
     const handleEnded = () => {
+      hasLooped.current = true
       video.style.opacity = '0'
       window.setTimeout(() => {
         video.currentTime = 0
@@ -40,7 +44,7 @@ export default function VideoBackground() {
       }, 100)
     }
 
-    video.style.opacity = '0'
+    video.style.opacity = '1'
     void video.play()
     rafId = requestAnimationFrame(updateOpacity)
     video.addEventListener('ended', handleEnded)
@@ -52,7 +56,10 @@ export default function VideoBackground() {
   }, [])
 
   return (
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 top-[300px] z-0 overflow-hidden">
+    <div
+      className="pointer-events-none absolute inset-x-0 bottom-0 z-0 overflow-hidden"
+      style={{ top: '300px' }}
+    >
       <video
         ref={videoRef}
         className="h-full w-full object-cover"
