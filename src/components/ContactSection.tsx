@@ -8,7 +8,7 @@ export default function ContactSection() {
       </p>
 
       <a
-        href="https://mail.qq.com/cgi-bin/write?to=1399575818%40qq.com"
+        href="https://mail.qq.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex rounded-full bg-[#000000] px-14 py-5 text-base text-white transition-transform duration-300 hover:scale-[1.03]"
