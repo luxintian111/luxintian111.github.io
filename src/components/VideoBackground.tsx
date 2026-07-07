@@ -58,18 +58,35 @@ export default function VideoBackground() {
   return (
     <div
       className="pointer-events-none absolute inset-x-0 bottom-0 z-0 overflow-hidden"
-      style={{ top: '300px' }}
+      style={{ top: '260px' }}
     >
       <video
         ref={videoRef}
-        className="h-full w-full object-cover"
+        className="hero-video h-full w-full object-cover"
+        style={{ objectPosition: 'center 62%' }}
         src={VIDEO_URL}
         muted
         playsInline
         preload="auto"
       />
-      {/* 经典 Aethera 渐变：上白 → 中透 → 下白，自然融进内容区 */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background from-0% via-transparent via-40% to-background to-100%" />
+
+      {/* 顶部：只淡入标题区，不遮中间和底部风景 */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.88) 6%, rgba(255,255,255,0.65) 14%, rgba(255,255,255,0.4) 22%, rgba(255,255,255,0.18) 32%, rgba(255,255,255,0.06) 45%, transparent 60%)',
+        }}
+      />
+
+      {/* 底部：仅在最后轻淡入，保留花草清晰度 */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, transparent 0%, transparent 65%, rgba(255,255,255,0.08) 78%, rgba(255,255,255,0.25) 88%, rgba(255,255,255,0.55) 95%, #ffffff 100%)',
+        }}
+      />
     </div>
   )
 }

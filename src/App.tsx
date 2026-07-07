@@ -19,7 +19,7 @@ export default function App() {
       </div>
 
       {/* 内容区：从白色自然过渡到淡绿渐变 */}
-      <div className="relative z-10 bg-gradient-to-b from-white via-[#f4f8f5] to-[#e6eee8]">
+      <div className="relative z-10 bg-gradient-to-b from-white via-[#f8faf9] via-[#f4f8f5] via-[#f0f5f2] via-[#e9f0eb] to-[#e6eee8]">
         <AboutSection />
         <TraitsSection />
         <DailySection />

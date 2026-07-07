@@ -51,3 +51,11 @@ body {
 .font-sans {
   font-family: var(--font-sans);
 }
+
+.hero-video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  filter: contrast(1.04) saturate(1.06);
+  will-change: transform;
+}
